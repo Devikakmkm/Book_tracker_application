@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker Application</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Book Tracker Application</h1>
+        <div class="nav-options">
+            <a href="/" class="btn">Home</a>
+            <a href="/books/new" class="btn">Add New Book</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="book-list">
+            <h2>All Books</h2>
+            <div class="book-grid">
+                <% books.forEach(book => { %>
+                    <div class="book">
+                        <img src="<%= book.imageUrl %>" alt="Book Image" class="book-image">
+                        <h3><a href="/books/<%= book._id %>"><%= book.title %></a></h3>
+                        <p><strong>Author:</strong> <%= book.author %></p>
+                        <p><strong>Genre:</strong> <%= book.genre %></p>
+                        <div class="actions">
+                            <a href="/books/<%= book._id %>" class="btn">View Details</a>
+                            <a href="/books/<%= book._id %>/edit" class="btn">Edit</a>
+                            <form action="/books/<%= book._id %>?_method=DELETE" method="POST" class="delete-form">
+                                <button type="submit" class="btn-delete">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

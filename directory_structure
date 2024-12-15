@@ -1,0 +1,17 @@
+directory_structure
+book-tracker-application/
+│
+├── models/
+│   └── book.js          # Mongoose model for the Book
+│
+├── public/              # Static files (CSS, images, etc.)
+│
+├── views/               # EJS templates for rendering views
+│   ├── edit.ejs         # Edit book form
+│   ├── index.ejs        # Home page listing all books
+│   ├── new.ejs          # New book form
+│   └── show.ejs         # Book details page
+│
+├── .package-lock.json    # Package lock file
+├── app.js               # Main application file
+└── package.json         # Project metadata and dependencies
